@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="30dp"
+    android:background="#E7F0F8"
+    tools:context=".AlarmActivity">
+
+
+
+
+    <TextView
+        android:id="@+id/tvWhere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bWhere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select date and time" />
+
+    <Button
+        android:id="@+id/bSetAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Alarm"/>
+
+    <Button
+        android:id="@+id/bRetMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="retToMain"
+        android:text="Return to the main menu" />
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "862829662907",
+    "project_id": "finalsubsproj",
+    "storage_bucket": "finalsubsproj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862829662907:android:a220b63f1bd0b19b828f9e",
+        "android_client_info": {
+          "package_name": "com.example.idansubs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBghS96PnwQ3v07WvpwdanR3hNgu2u728E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
