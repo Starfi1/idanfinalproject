@@ -24,14 +24,5 @@
 
         />
 
-    <Button
-        android:id="@+id/showHide"
-        android:layout_width="110dp"
-        android:layout_height="61dp"
-        android:layout_above="@id/rstBtn"
-        android:layout_marginBottom="-1dp"
-
-        android:text="Show/Hide" />
-
 
 </RelativeLayout>

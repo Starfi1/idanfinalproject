@@ -14,7 +14,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class GameActivity extends AppCompatActivity {
     BoardGame bg;
     FrameLayout frame;
-    Button showHideBtn;
     String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,25 +30,20 @@ public class GameActivity extends AppCompatActivity {
         frame = findViewById(R.id.frame);
        bg = new BoardGame(this);
       frame.addView(bg);
-        showHideBtn=(Button) findViewById(R.id.showHide);
-       showHideBtn.setOnClickListener(this::onClick);
 
 
     }
     public void retry(View view)
     {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("users").push();
-        User user = new User(name, bg.getTryCounter());
-        myRef.setValue(user);
-
+        if(bg.getHitCounter()==12) {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("users").push();
+            User user = new User(name, bg.getTryCounter());
+            myRef.setValue(user);
+        }
         Intent intent = new Intent( GameActivity.this,MainActivity.class);
         startActivity(intent);
     }
 
 
-
-    public void onClick(View v) {
-        bg.showHideSubs();
-    }
 }

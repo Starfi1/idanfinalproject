@@ -7,9 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         nameEditText=findViewById(R.id.edittext_user);
-
 
         RecyclerView recyclerView=findViewById(R.id.recyclerView2);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     public void saveName(View view) {
 
             Intent intent = new Intent(MainActivity.this, GameActivity.class);
@@ -72,4 +77,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void moveToAlarm(View view) {
+        Intent intent = new Intent(MainActivity.this, AlarmActivity.class);
+        startActivity(intent);
+    }
 }

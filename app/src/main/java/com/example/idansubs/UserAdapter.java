@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
     private ArrayList<User> users;
@@ -30,7 +31,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
          User currentUser= users.get(position);
          holder.nameTextView.setText(currentUser.getName());
          holder.scoreTextView.setText(Integer.toString(currentUser.getScore()));
-        holder.tmunaImageView.setImageResource(R.drawable.chara);
+      int randomNumber = currentUser.getRandNum();
+        switch (randomNumber) {
+            case 0:  holder.tmunaImageView.setImageResource(R.drawable.chara);
+                break;
+          case 1: holder.tmunaImageView.setImageResource(R.drawable.chara2);
+              break;
+            case 2: holder.tmunaImageView.setImageResource(R.drawable.chara3);
+                break;
+            case 3: holder.tmunaImageView.setImageResource(R.drawable.chara4);
+                break;
+            default: holder.tmunaImageView.setImageResource(R.drawable.chara2);
+        }
     }
 
     @Override

@@ -99,11 +99,7 @@ public class BoardGame extends View {
         brush.setColor(Color.BLACK);
         brush.setTextAlign(Paint.Align.CENTER);
         brush.setTextSize(180);
-       /// if(tryCounter==0)
-     ///   {
-   ///         canvas.drawText("You've failed",canvas.getWidth()/2,canvas.getHeight()-450,brush);
-   ///         atEnd();
-   ///     }
+       
         if(hitCounter==12)
         {
             canvas.drawText("You've won",canvas.getWidth()/2,canvas.getHeight()-450,brush);
