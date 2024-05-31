@@ -24,12 +24,9 @@ public class GameActivity extends AppCompatActivity {
         if (extras != null) {
            name = extras.getString("name");
         }
-
-
-
         frame = findViewById(R.id.frame);
-       bg = new BoardGame(this);
-      frame.addView(bg);
+        bg = new BoardGame(this);
+        frame.addView(bg);
 
 
     }

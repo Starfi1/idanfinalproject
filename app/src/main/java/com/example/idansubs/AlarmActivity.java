@@ -30,12 +30,11 @@ import java.util.Calendar;
 public class AlarmActivity extends AppCompatActivity {
     Context context;
     TextView tvWhere;
-    Button bWhere, bSetAlarm, bNow;
-    Calendar calendar, cNoti;
+    Button bWhere, bSetAlarm;
+    Calendar calendar;
     int notiYear, notiMonth, notiDay, notiHour, notiMinute,
             cyear, cmonth, cday, cminute, chour;
     String stWhere = "";
-    NotificationManagerCompat nmc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

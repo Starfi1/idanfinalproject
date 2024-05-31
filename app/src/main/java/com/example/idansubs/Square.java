@@ -8,7 +8,6 @@ public class Square {
     float x, y, w, h;//top left
     Paint p;
     boolean isClicked;
-    boolean doesShow=false;
     boolean isSub=false;
     public Square(float x, float y, float w, float h) {
         this.x = x;
@@ -16,10 +15,6 @@ public class Square {
         p = new Paint();
         this.w = w;
         this.h = h;
-    }
-    public void changeVisi(boolean b)
-    {
-        doesShow=b;
     }
     public void drawStroke(Canvas canvas) {
         p.setStyle(Paint.Style.STROKE);
@@ -35,10 +30,7 @@ public class Square {
     {
         return isSub;
     }
-    public boolean GetdoesShow()
-    {
-        return doesShow;
-    }
+
     public void setIsClicked()
     {
         isClicked=true;
@@ -53,7 +45,6 @@ public class Square {
         {
             if(isSub)p.setColor(Color.argb(250,147,112,219));
             else p.setColor(Color.BLUE);}
-        else if(isSub==true&&doesShow==true) p.setColor(Color.RED);
         else p.setColor(Color.GREEN);
         canvas.drawRect(x, y, x + w, y + h, p);
         drawStroke(canvas);

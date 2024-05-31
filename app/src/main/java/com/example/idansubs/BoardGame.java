@@ -11,8 +11,7 @@ import java.util.Random;
 
 public class BoardGame extends View {
     final int size = 10;
-    boolean gameEnded=false;
-    Square[][] squares;
+    Square[][] squaresForDisplay;
     Context context;
     Square[][] squaresForChanges;
     int w;
@@ -22,12 +21,12 @@ public class BoardGame extends View {
     public BoardGame(Context context) {
         super(context);
         this.context = context;
-        squares = new Square[size][size];
+        squaresForDisplay = new Square[size][size];
         squaresForChanges = new Square[size][size];
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                squaresForChanges[i][j] = new Square(j * 4, i * 4, 4, 4);
+                squaresForChanges[i][j] = new Square(1, 1, 4, 4); ////x and y don't matter
 
             }
         }
@@ -80,7 +79,7 @@ public class BoardGame extends View {
         w = canvas.getWidth() / size;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                squares[i][j] = new Square(j * w, i * h, w, h);
+                squaresForDisplay[i][j] = new Square(j * w, i * h, w, h);
             }
         }
         drawBoard(canvas);
@@ -135,59 +134,15 @@ public class BoardGame extends View {
         }
         return check;
     }
-    public void showHideSubs()
-    {
-        if (squares[0][0].GetdoesShow()==true){
-            for (int i = 0; i < size; i++) {
-                for (int j = 0; j < size; j++) {
-                    squares[i][j].changeVisi(false);
-                    squaresForChanges[i][j].changeVisi(false);
-                }
-            }
-        }
-        else{
-            for (int i = 0; i < size; i++) {
-                for (int j = 0; j < size; j++) {
-                    squares[i][j].changeVisi(true);
-                    squaresForChanges[i][j].changeVisi(true);
-                }
-            }
-        }
-        invalidate();
-    }
-    public void atEnd()
-    {
-        if (gameEnded==false) {
-            gameEnded=true;
-            if (squares[0][0].GetdoesShow() == true) {
-                for (int i = 0; i < size; i++) {
-                    for (int j = 0; j < size; j++) {
-                        squares[i][j].changeVisi(false);
-                        squaresForChanges[i][j].changeVisi(false);
-                    }
-                }
-            } else {
-                for (int i = 0; i < size; i++) {
-                    for (int j = 0; j < size; j++) {
-                        squares[i][j].changeVisi(true);
-                        squaresForChanges[i][j].changeVisi(true);
-                    }
-                }
-            }
-            invalidate();
-
-        }
-    }
 
     public void drawBoard(Canvas canvas) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if(squaresForChanges[i][j].GetIsSub()==true)
-                    squares[i][j].setSub();
+                    squaresForDisplay[i][j].setSub();
                 if(squaresForChanges[i][j].GetIsClicked()==true)
-                    squares[i][j].setIsClicked();
-                squares[i][j].changeVisi(squaresForChanges[i][j].GetdoesShow());
-                squares[i][j].draw(canvas);
+                    squaresForDisplay[i][j].setIsClicked();
+                squaresForDisplay[i][j].draw(canvas);
 
             }
         }

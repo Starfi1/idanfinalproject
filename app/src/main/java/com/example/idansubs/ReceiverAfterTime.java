@@ -22,7 +22,6 @@ import androidx.core.app.NotificationManagerCompat;
 
 public class ReceiverAfterTime extends BroadcastReceiver {
 
-    private NotificationManagerCompat nmc;
 
     @Override
     public void onReceive(Context context, Intent intent) {
